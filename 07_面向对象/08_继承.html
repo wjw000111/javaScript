@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+            继承：
+                -可以通过extends来完成继承 
+                -当一个类继承了另一个类，相当于将另一个类中的代码复制到了当前的类中
+                -通过继承可以减少重复的代码，并可以在不修改一个类的前提下对其进行扩展
+            封装——安全性
+            继承——扩展性
+            多态——灵活性
+         */
+        class Animal{
+            constructor(name){
+                this.name=name
+            }
+            sayHello(){
+                console.log(this.name+"在叫");
+            }
+        }
+        class Dog extends Animal{
+            
+        }
+        class Cat extends Animal{
+            
+        }
+        const dog=new Dog("旺财")
+        const cat=new Cat("汤姆")
+        dog.sayHello()
+        cat.sayHello()
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

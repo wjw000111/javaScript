@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+            枚举属性：指将对象中所有的属性全部获取 
+            
+            1.for-in 语句
+                for(let propName in 对象){}
+                每次执行都会将一个属性名赋值给我们定义的变量
+                1.2注意：并不是所有的属性都可以枚举，比如符号添加的属性
+         */
+        // 1
+        let obj={
+            name:"孙悟空",
+            age:18,
+            gender:"男",
+            // 1.2 符号添加的属性不能枚举
+            [Symbol()]:"测试的属性",
+
+        }
+        console.log(obj);
+        for(let propName in obj){
+            console.log(propName,obj[propName])
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

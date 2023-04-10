@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+            1.原始值都属于不可变类型，一旦创建无法修改,在内存中不会创建重复的原始值
+            2.对象创建完成后，可以任意添加删除修改对象中的属性
+                注意：
+                    2.1如果两个变量同时指向一个对象，通过一个变量修改对象时，对另一个变量也会产生影响
+                    2.2当对两个对象进行相等或全等比较，比较的是对象的内存地址
+                    
+         */
+
+        //  1
+        let a=10
+        let b=10
+        console.log("a=",a)
+        console.log("b=",b);
+
+        // 2
+        let obj=Object()
+        obj.name="孙悟空"
+        obj.age=18
+        let obj2=Object()
+        let obj3=Object()
+
+        // 2.2
+        console.log(obj2===obj3) //false
+
+        // 2.1
+        let obj4=obj
+        obj4.name="猪八戒"
+        console.log(obj===obj4)  //true
+        console.log(obj)  //obj.name="猪八戒"
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

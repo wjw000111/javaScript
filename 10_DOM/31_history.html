@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn">点我一下</button>
+    <script>
+        const btn =document.getElementById("btn")
+        btn.onclick=()=>{
+            /*
+                history.back() 回退
+                history.forward() 前进
+                 history.go() -可以前进也可以后退，还可以控制步数
+             */
+            // console.log(history);
+            // history.back()
+            // history.forward()
+            history.go(1)
+        }
+    </script>
+</body>
+</html>

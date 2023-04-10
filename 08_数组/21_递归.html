@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+            递归：
+                -调用自身的函数称为递归函数
+                -递归的作用和循环基本一致
+            如何用递归解决阶乘：
+            递归的核心思想将一个大的问题拆分为一个一个的小的问题，小的问题解决了，大的问题也就解决了
+            编写递归函数，可以包含两个要点：
+                1.基线条件-终止条件
+                2.递归条件：如何对问题进行拆分
+            递归的作用和循环是一致的，不同点在于递归的思路比较清晰简洁,循环的执行性能比较好
+                在开发过程中，一般的问题可以通过循环解决，也尽量使用循环，少用递归
+                只有一些使用循环比较麻烦的情况下使用递归
+         */
+        function fn(){
+            fn()
+        }
+        // fn()
+
+        function jieCheng(num){
+            let result=1
+            for(let i=2;i<=num;i++){
+                result*=i
+            }
+            return result
+        }
+        function jieCheng2(num){
+            if(num===1){
+                return 1
+            }
+            return jieCheng2(num-1)*num
+        }
+        console.log(jieCheng2(4));
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

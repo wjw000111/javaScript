@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+            运算符（操作符）
+                -运算符可以用来对一个或多个值进行运算
+                + - * /
+
+         */
+        let a=1+1
+        a=10/0 ///infinity
+        a=10**4
+        a=9**0.5 //开方
+        a=10%3
+        /*
+             JS是一门弱类型语言，当进行运算时会通过自动的类型转换来完成运算
+         */
+        a=10-'5' //5
+        a=10+true //10+1
+        a=5+null //5+0
+        a=6-undefined //6-NaN
+        /* 
+            当任意一个值和字符串做加法运算，他会先将其他值转换为字符串，然后再做拼串的操作
+            可以利用这个特点来完成类型转换
+            可以通过为任意类型+一个空串的形式来将其转换为字符串，其原理和String()函数相同，但使用起来更加简洁
+         */
+        a=1+'2' //12
+        a='hello' + 'world'
+        a='1'+ 2 //12,字符串
+        a=true+'hello'
+        a=true + ''//完成类型转换，并在值上不会加多余的内容
+        console.log(typeof a,a)
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

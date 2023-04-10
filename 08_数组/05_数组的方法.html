@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+             indexOf()
+                -获取元素在数组中第一次出现的索引
+                -参数：
+                    1.要查询的元素
+                    2.查询的起始位置
+            lastIndexOf()
+                -获取元素在数组中最后一次出现的位置
+
+            返回值：
+                找到了返回元素的索引
+                没找到返回-1
+            
+            join()
+                -将一个数组中的元素连接为一个字符串
+                -参数：
+                    指定一个字符串作为连接符
+            slice()
+                -切片，用来截取数组，非破坏性方法
+                -参数： 
+                    1.截取的起始位置，包括该位置
+                    2.截取的结束位置，不包括该位置
+                        -第二个参数可以省略不写，截取到最后
+                        -索引可以是负值
+                    如果将两个参数都省略，可以对数组进行浅拷贝
+
+         */
+        const arr=["孙悟空","猪八戒","沙和尚","唐僧","猪八戒"]
+        let result=arr.indexOf("猪八戒",3)  //4
+        result=arr.lastIndexOf("猪八戒",3)  //1
+        result=arr.lastIndexOf("白骨精")//-1
+        result=arr.indexOf("白骨精") //-1
+        result=arr.join('-_') //孙悟空-_猪八戒-_沙和尚-_唐僧-_猪八戒
+        result=arr.slice(0,2) //['孙悟空', '猪八戒']
+        result=arr.slice(1,) //['猪八戒', '沙和尚', '唐僧', '猪八戒']
+        result=arr.slice(2,-2)  //['沙和尚']
+
+        console.log(arr);
+        console.log(result);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

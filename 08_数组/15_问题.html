@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* 
+
+         */
+        class Person{
+            constructor(name,age){
+                this.name=name
+                this.age=age
+            }
+        }
+        const personArr=[
+            new Person("孙悟空",18),
+            new Person("沙和尚",38),
+            new Person("红孩儿",8),
+            new Person("白骨精",16)
+        ]
+        /*
+        、  一个函数的参数可以是函数：
+                如果将函数作为参数传递，那么我们就称这个函数为回调函数，callback 
+         */
+        function fileter(arr,cb){
+            const newArr=[]
+            for(let item of arr){
+                if(cb(item)){
+                    newArr.push(item)
+                }
+            }
+            return newArr
+        }
+        function fn(item){
+            return item.age<18
+        }
+        console.log(fileter(personArr,fn));
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

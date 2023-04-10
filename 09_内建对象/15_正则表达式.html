@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+             量词：
+                {m}正好m个
+                {m,}至少m个
+                {m,n} m到n个
+                +  一个以上，相当于{1,}
+                * 任意数量
+                ? 0-1个
+         */
+        let re = /^(ab){3}$/
+        re=/^[a-z]{3,6}/
+        re=/^ba*$/
+        let result=re.test("b")
+        console.log(result);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

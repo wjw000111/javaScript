@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+        // 任何类型的值都可以成为数组中的元素
+        let arr=[1,"hello",true,null,{name:"孙悟空",age:18},()=>{}]
+        // 创建数组时尽量确保数组中存储的数据的类型是相同的
+        arr =["孙悟空","猪八戒","沙和尚"]
+        console.log(arr);
+        /*
+            遍历数组：
+                -遍历数组，就是获取到数组中的每一个元素 
+         */
+        for(let i=0;i<arr.length;i++){
+            console.log(arr[i]);
+        }
+        class Person{
+            constructor(name,age){
+                this.name=name
+                this.age=age
+            }
+        }
+        // 遍历数组，打印未成年人的信息
+        const personArr=[
+            new Person("孙悟空",18),
+            new Person("沙和尚",38),
+            new Person("红孩儿",8)
+        ]
+        for(let i=0;i<personArr.length;i++){
+            if(personArr[i].age<18){
+                console.log(personArr[i]);
+            }
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+             在开发中应尽量减少直接在全局作用域中编写代码,
+                所以我们的代码要尽量编写到局部作用域中
+                如果使用let 声明的变量，可以使用{}来创建块作用域
+         */
+        // 希望创建一个只执行一次的匿名函数 
+        //  立即执行函数
+        (function(){
+            let a=10
+            console.log(a);
+        }());
+
+        (function(){
+            let a=20
+            console.log(a);
+        }())
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

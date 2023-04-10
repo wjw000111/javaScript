@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn">点我一下</button>
+    <form action="#">
+        <input type="text" name="username">
+    </form>
+    <script>
+        /*
+
+         */
+        const btn=document.getElementById("btn")
+        btn.addEventListener("click",()=>{
+            /*
+                location表示的是浏览器地址栏的信息
+                    -可以直接将location的链接修改为一个新的地址，这样会使网页发生跳转
+                    -location.assign() 跳转到一个新的地址
+                    -location.href 获取当前网页的地址
+                    -location.replace()  调转到一个新的地址（无法通过回退按钮回退）
+                    -location.reload() 刷新页面,可以传一个true,强制清空缓存
+             */
+            console.log(location.href);
+            // location="https://bilibili.com"
+            // location.assign("https://bilibili.com")
+            // location.replace("https://bilibili.com")
+            location.reload(true)   
+        })
+    </script>
+</body>
+</html>

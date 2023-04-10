@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+
+         */
+        function fn(a){
+            console.log("a=",a);
+            console.log(a.name);
+
+            a.name="猪八戒"
+        }
+        let obj={name:"孙悟空"}
+        // 传递实参时，传递的不是变量本身，而是变量中存储的值
+        fn(obj)
+        console.log(obj);
+
+
+
+        function fn1(a={name:"沙和尚"}){
+            console.log("a=",a);
+            a.name="唐僧"
+            console.log("a=",a);
+        }
+        fn1()
+        fn1()
+
+
+        let obj2={name:"沙和尚"}
+        function fn2(a=obj2){
+            console.log("a=",a);
+            a.name="唐僧"
+            console.log("a=",a);
+        }
+        fn2()
+        fn2()
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

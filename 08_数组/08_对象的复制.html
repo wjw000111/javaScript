@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+
+         */
+        const arr=["孙悟空","猪八戒","沙和尚"]
+        const arr2=arr.slice()
+        /*
+            ...(展开运算符)
+                -可以将一个数组中的元素展开到另一个数组中或者作为函数的参数传递
+         */
+        // const arr3=[arr[0],arr[1],arr[2]]
+        const arr3=["唐僧",...arr,"女儿国国王"]  //等价于上面的写法
+        console.log(arr3);
+        console.log(arr===arr3);
+
+        function sum(a,b,c){
+            return a+b+c
+        }
+        const arr4=[10,20,30]
+        let result=sum(arr4[0],arr4[1],arr4[2])
+        result=sum(...arr4)
+        console.log(result);
+
+        /*
+            对象的复制 
+                -Oject.assign(目标对象，被复制的对象)
+                -将被复制对象中的属性复制到目标对象，并将目标对象返回
+            -也可以使用展开运算符对对象进行复制
+         */
+        const obj={name:"孙悟空",age:18}
+        const obj2=Object.assign({},obj)
+        // 或者
+        const obj3={address:"花果山",age:20} 
+        Object.assign(obj3,obj) //只将没有的加进去,如果有同名属性，把同名属性覆盖
+        const obj4={address:"高老庄",...obj,age:50}
+
+        console.log(obj);
+        console.log(obj2);
+        console.log(obj3);
+        console.log(obj4);
+        console.log(obj2===obj);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

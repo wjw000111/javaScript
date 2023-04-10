@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+            练习3：
+                高：180cm以上，富：1000万以上，帅：500以上；
+                如果这三个条件同时满足，则：我一定要嫁给他
+                如果三个条件有真的情况，则："嫁吧，比上不足比下有余" 
+                如果三个条件都不满足，则“不嫁”
+         */
+        let height=+prompt("请输入你的升高：")
+        let money=+prompt("请输如你的身价：")
+        let face=+prompt("请输入你的颜值(像素)：")
+        if(height>180 && money>1000 && face>500){
+            alert('一定')
+        }
+        else if(height>180 || money>1000 || face>500){
+            alert('比上不足')
+        }
+        else{
+            alert('无')
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+            作用域链 
+                当我们使用一个变量时，JS解释器会优先在当前的作用域中寻找变量，
+                    如果找到了直接使用，没找到去上一层作用域找,如果到全局作用域都没找到，报错
+         */
+        let a=10
+        {
+            let a="第一个代码块中的a"
+            {
+                console.log(a);//就近
+            }
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

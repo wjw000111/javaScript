@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+            获取用户输入的大于1的整数，然后检查这个数是否是质数，并打印结果 
+         */
+        let num=+prompt("请输入一个大于1 的证书：")
+        let flag=true
+        for(let i=2;i<num;i++){
+            if(num%i===0)
+                flag=false
+        }
+        if(flag){
+            alert(`${num}是质数`)
+        }
+        else{
+            alert(`${num}不是质数`)
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

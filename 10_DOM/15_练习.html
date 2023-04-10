@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .outer{
+            width: 400px;
+            margin: 100px auto;
+            text-align: center;
+        }
+        table{
+            width: 400px;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        td,th{
+            border: 1px black solid;
+            padding: 10px 0;
+        }
+        form div{
+            margin: 10px 0;
+        }
+    </style>
+    <script>
+        window.addEventListener("load",function(){
+            function delEmpHandler(){
+                    const tr=this.parentNode.parentNode
+                    // const empName=tr.getElementsByTagName("td")[0].textContent
+                    const empName=tr.firstElementChild.textContent
+                    // 删除之前弹出一个友好的提示
+                    let flag=confirm("确认要删除【"+empName+"】吗?")
+                    if(flag){
+                        tr.remove()
+                    }
+                    // 本练习中的超链接不希望发生跳转，但跳转行为是超链接的默认操作，
+                    // 只要点击超链接就会触发页面的跳转，事件中可以通过取消默认行为来阻止超链接的跳转
+                    // 使用return false 取消默认行为只在xxx.xxx=function(){}的方式下才适用
+                    return false 
+                }
+            /*
+                点击删除超链接，删除员工信息 
+             */
+            const links=document.links
+            for(let i=0;i<links.length;i++){
+                links[i].onclick=delEmpHandler
+            }
+
+            /*
+                点击按钮后，将用户的信息输入到表格中 
+             */
+            // 获取tbody
+            // const tbody=document.querySelector("tbody")
+            const tbody=document.getElementsByTagName("tbody")[0]
+            const btn=document.getElementById("btn")
+            btn.onclick=function(){
+                // 获取用户输入的数据
+                const name=document.getElementById("name").value
+                const email=document.getElementById("email").value
+                const salary=document.getElementById("salary").value
+                // 将获取到的数据设置为DOM对象
+                // 这种写法不太好，容易xss注入    
+                tbody.insertAdjacentHTML("beforeend",`<tr>
+                    <td>${name}</td>
+                    <td>${email}</td>
+                    <td>${salary}</td>
+                    <td><a href="javascript:;">删除</a></td>
+                </tr>`)
+                // 由于上边的超链接 是新添加的，他的上面并没有绑定单击响应函数，所以新添加的员工无法删除
+                //  为新添加的超链接单独绑定单击响应函数
+                links[links.length-1].onclick=delEmpHandler
+                return false
+            }
+        })
+    </script>
+</head>
+<body>
+    <div class="outer">
+        <table>
+            <tbody>
+                <tr>
+                    <th>姓名</th>
+                    <th>邮箱</th>
+                    <th>薪资</th>
+                    <th>操作</th>
+                </tr>
+                <tr>
+                    <td>孙悟空</td>
+                    <td>swk@hgs.com</td>
+                    <td>10000</td>
+                    <td><a href="javascript:;">删除</a></td>
+                </tr>
+                <tr>
+                    <td>猪八戒</td>
+                    <td>zbj@glz.com</td>
+                    <td>8000</td>
+                    <td><a href="javascript:;">删除</a></td>
+                </tr>
+                <tr>
+                    <td>沙和尚</td>
+                    <td>shs@lsh.com</td>
+                    <td>6000</td>
+                    <td><a href="javascript:;">删除</a></td>
+                </tr>
+            </tbody>
+        </table>
+        <form action="#">
+            <div>
+                <label for="name">姓名</label>
+                <input type="text" id="name">
+            </div>
+            <div>
+                <label for="email">邮件</label>
+                <input type="email" id="email">
+            </div>
+            <div>
+                <label for="salary">薪资</label>
+                <input type="number" id="salary">
+            </div>
+            <button id="btn">添加</button>
+        </form>
+    </div>
+</body>
+</html>

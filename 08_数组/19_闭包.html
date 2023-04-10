@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+            函数的作用域，在函数创建时就已经确定了，和调用的位置无关(词法作用域)
+            闭包利用的就是词法作用域
+         */
+        let a="全局变量a"
+        function fn(){
+            console.log(a);
+        }
+        function fn2(){
+            let a="fn2中的a"
+            // console.log(a); 
+            fn()
+        }
+        // fn2() 
+
+        function fn3(){
+            let a="fn3中的a"
+            return function fn4(){
+                console.log(a);
+            }
+            // fn4()
+        }
+        let fn4=fn3()
+        fn4()
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

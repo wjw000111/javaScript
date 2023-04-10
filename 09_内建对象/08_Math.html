@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+            Math
+                -Math一个工具类 
+                -Math中为我们提供了数字运算相关的方法
+                -常量：
+                    Math.PI 圆周率
+                -方法：
+                    Math.abs() 求绝对值
+                    Math.min() 求最小
+                    Math.max() 求最大
+                    Math.pow() 求x的y次幂
+                    Math.sqrt() 开根号
+
+                    Math.floor()  向下取整
+                    Math.ceil() 向上取整
+                    Math.round()  四舍五入取整
+                    Math.trunc()  直接去除小数位
+                    Math.random() 生成一个0-1之间的随机数
+                    生成x-y之间的随机数：
+                        Math.round(Math.random()*(y-x)+x)
+         */
+        console.log(Math);
+        console.log(Math.abs(-10));
+        console.log(Math.min(1,2,3,4));
+        console.log(Math.pow(2,3)); //等价于4**2
+        console.log(Math.sqrt(4));
+        console.log(Math.floor(1.9));
+
+        // 生成0-5之间的随机数
+        result=Math.round(Math.random()*5)
+        console.log(result);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

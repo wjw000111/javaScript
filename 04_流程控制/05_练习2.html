@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+            练习2：
+                从键盘输入小明的期末成绩：
+                    当成绩为100，奖励一辆汽车
+                    当成绩为80-90,奖励一台iphone
+                    当成绩为60-79,奖励一本参考书
+                    其他时，无奖励
+         */
+        let num=+prompt("请输入小明的期末成绩：")
+        // 检查是否合法
+        if(isNaN(num) || num<0 || num>100){
+            alert('输入不合法')
+        }
+        else{
+            if(num===100){
+                alert('汽车')
+            }
+            else if(num>=80){
+                alert('iphone')
+            }
+            else if(num>=60){
+                alert('参考书')
+            }
+            else{
+                alert('无奖励')
+            }
+        }
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        img {
+            vertical-align: top;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .outer {
+            width: 680px;
+            height: 390px;
+            margin: 100px auto;
+            position: relative;
+        }
+
+        .img-list {
+            height: 390px;
+        }
+
+        .img-list li {
+            position: absolute;
+            opacity: 0;
+            transition: opacity 2s;
+        }
+
+        li.current {
+            z-index: 1;
+            opacity: 1;
+        }
+
+        /* 设置两个箭头的样式 */
+        .prev-next a {
+            height: 60px;
+            font-size: 60px;
+            color: #fff;
+            font-weight: bold;
+            text-decoration: none;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+            z-index: 2;
+            opacity: .5;
+        }
+
+        .prev-next a:hover {
+            opacity: 1;
+        }
+
+        #next {
+            right: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="outer">
+        <ul class="img-list">
+            <li class="current">
+                <a href="#">
+                    <img src="./img/1.jpg">
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="./img/2.jpg">
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="./img/3.jpg">
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="./img/4.jpg">
+                </a>
+            </li>
+        </ul>
+        <!-- 添加切换按钮 -->
+        <div class="prev-next">
+            <a id="prev" href="javascript:;">
+                <</a>
+                    <a id="next" href="javascript:;">></a>
+        </div>
+        <!-- <div class="btn-wrapper">
+            <button id="prev">
+                上一张
+            </button>
+            <button id="autoBtn">自动切换</button>
+            <button id="next">
+                下一张
+            </button>
+        </div> -->
+    </div>
+    <script>
+        /*
+            问题：
+                1.能不能简化代码
+                2.如何控制自动切换的关闭和开启
+
+         */
+        let timer
+        setTimeout(function auto() {
+            // 获取当前显示的图片
+            const current = document.querySelector(".img-list .current")
+            // 获取下一个图片
+            // document.getElementsByTagName("li")[0]
+            const next = current.nextElementSibling || document.querySelector(".img-list li:first-child")
+            // 切换显示状态
+            current.classList.remove("current")
+            next.classList.add("current")
+            setTimeout(auto, 3000)
+        }, 3000)
+
+        /*
+            点击按钮切换图片 
+         */
+        const prev = document.getElementById("prev")
+        const next = document.getElementById("next")
+        prev.onclick=()=>{
+            // 获取当前显示的图片
+            const current = document.querySelector(".img-list .current")
+            // 获取下一个图片
+            // document.getElementsByTagName("li")[0]
+            const next = current.previousElementSibling || document.querySelector(".img-list li:last-child")
+            // 切换显示状态
+            current.classList.remove("current")
+            next.classList.add("current")
+        }
+        next.onclick = () => {
+            // 获取当前显示的图片
+            const current = document.querySelector(".img-list .current")
+            // 获取下一个图片
+            // document.getElementsByTagName("li")[0]
+            const next = current.nextElementSibling || document.querySelector(".img-list li:first-child")
+            // 切换显示状态
+            current.classList.remove("current")
+            next.classList.add("current")
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn">停止定时器</button>
+    <h1 id="num"></h1>
+    <script>
+        /* 
+            通过定时器使代码在制定时间后执行
+                -设置定时器的方式有两种
+                    setTimeout()
+                        -参数： 
+                            1.回调函数（要执行的代码）
+                            2.间隔的时间(毫秒)
+                        -关闭定时器：
+                            clearTimeout()
+                    setInterval() 每间隔一段时间，代码就执行一次
+                        -参数：
+                            1.回调函数（要执行的代码）
+                            2.间隔的时间(毫秒)
+                        关闭定时器：
+                            clearInterval()
+         */
+        // const timer=setTimeout(()=>{
+        //     alert("三秒后执行的")
+        // },3000)
+        // clearTimeout(timer)
+
+        let num=0
+        const numH1=document.getElementById("num")
+        const timer=setInterval(()=>{
+            // console.log("哈哈");
+            num++
+            numH1.textContent=num
+        },3000)
+        
+
+        const btn=document.getElementById("btn")
+        btn.addEventListener("click",()=>{
+            clearInterval(timer)
+        }) 
+
+    </script>
+    
+</body>
+</html>

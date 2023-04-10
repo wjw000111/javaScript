@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+            && 逻辑与
+                -当&&左右都为true,则返回true,否则返回false
+                -与运算时短路的与，如果第一个值为false, 则不看第二个值
+                -与运算是找false，如果找到false 直接返回，没有false 则返回true
+                -对于非布尔值进行与运算，他会转换为布尔值然后计算，但是最后会返回原值
+                -如果第一个值为false ，则直接返回第一个值，如果第一个值为true,则返回第二个值
+
+
+            || 逻辑或
+                可以对两个值进行或运算
+                有true时返回true,否则返回false
+                -或运算是短路的或,如果第一个值为true,则不看第二个值
+                -或运算是true,如果找到true直接返回，没有true才会返回false
+                -对于非布尔值的运算，他会转换为布尔值然后计算，但是最终会返回原值
+                    如果以第一个值为true ,返回第一个，如果第一个值为false,返回第二个
+                
+
+         */
+        let result=true && true
+        result=true && false 
+        false && alert(123) //不弹出
+        result=1&&2  //2
+        result=1&&0  //0
+        result=0 && NaN //0
+
+        result=true || false //true
+        result= false || true //true
+
+        result=false || alert(123)  //弹出
+        result=1||2  //1
+        console.log(result)
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
